@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" /> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Document</title> 
+    <link rel="stylesheet" href="lab6.css" /> 
+    <script >
+        function bgcolorchange() {
+             var div = document.getElementById("box"); 
+             var bgcolor = document.getElementById("bgcolor").value; 
+             div.style.backgroundColor = bgcolor; 
+            }
+            function textcolchange() { 
+                var div = document.getElementById("box"); 
+                var textcol = document.getElementById("textcolor").value; 
+                div.style.color = textcol; 
+            }
+            function textsize() { 
+                var div = document.getElementById("box"); 
+                var textsize = document.getElementById("fontsize").value; 
+                div.style.fontSize = textsize + "px"; 
+            }
+            function widthchange() { 
+                var div = document.getElementById("box"); 
+                var width = document.getElementById("boxwidth").value; 
+                div.style.width = width + "px";
+             }
+            function heightchange() { 
+                var div = document.getElementById("box"); 
+                var height = document.getElementById("boxheight").value; 
+                div.style.height = height + "px";
+             }
+             function borderRadius() {
+                 var div = document.getElementById("box");
+                 var radius = document.getElementById("myslider").value; 
+                 div.style.borderRadius = radius + "px"; 
+            }
+    </script> 
+</head> 
+
+
+<body>
+     <div class="container"> 
+       <div id="box">Hello World!!</div> 
+     </div> <hr /> 
+     <div class="inputs"> <label>Background Color: </label> 
+        <input type="color" name="color" id="bgcolor" onchange="bgcolorchange()" /> 
+        <br />
+         <label>Text Color:</label> 
+         <input type="color" name="textcolor" id="textcolor" onchange="textcolchange()" /> <br />
+         <label>Text Size:</label> <select name="fontsize" id="fontsize" onchange="textsize()"> 
+         <option value="8">8</option>
+         <option value="10">10</option> 
+         <option value="20">20</option> 
+         <option value="30">30</option> 
+         <option value="40">40</option> 
+        </select> <br /> 
+        <label>Box Width:</label>
+         <input type="text" id="boxwidth" onkeyup="widthchange()" /> <br /> 
+         <label>Box Height:</label> <input type="text" id="boxheight" onkeyup="heightchange()" /> 
+         <br /> <label>Box Radius:</label> 
+         <input type="range" min="5" max="100" name="slider" id="myslider" onmousemove="borderRadius()" />
+         </div> 
+        </body> 
+        </html>
